@@ -136,6 +136,8 @@ public class OshiHTTPServer implements Runnable {
             }
         } catch (IOException ioe) {
             logger.error("Server error: {}", ioe);
+        } catch (NullPointerException npe) {
+            logger.error("Null input: {}", npe);
         } finally {
             try {
                 // close socket connection, defined for this thread
